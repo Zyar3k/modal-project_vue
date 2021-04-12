@@ -1,23 +1,19 @@
 <template>
   <h1>{{ title }}</h1>
-  <Modal />
+  <Modal :header="header" :text="text" theme='sale' />
 </template>
 
 <script>
 import Modal from "./components/Modal.vue";
 export default {
   name: "App",
-  components: {Modal},
+  components: { Modal },
   data() {
     return {
       title: "My first Vue App",
+      header: "Sign up for the Giveway",
+      text: "Grab your product for half price",
     };
-  },
-  methods: {
-    handleClick() {
-      console.log(this.$refs.name);
-      this.$refs.name.classList.add("active");
-    },
   },
 };
 </script>
@@ -36,5 +32,4 @@ h1 {
   display: inline-block;
   padding-bottom: 10px;
 }
-
 </style>
