@@ -11,7 +11,14 @@
       <p>Grab your product for half price</p>
     </Modal>
   </div>
+  <div v-if="showModal2">
+    <Modal @close="toggleModal2">
+      <h1>Sign up to hte newsletter</h1>
+      <p>For updates and discounts</p>
+    </Modal>
+  </div>
   <button @click.alt="toggleModal">Open modal (alt)</button>
+  <button @click.ctrl="toggleModal2">Open modal 2 (ctrl)</button>
 </template>
 
 <script>
@@ -22,13 +29,16 @@ export default {
   data() {
     return {
       title: "My first Vue App",
-
       showModal: false,
+      showModal2: false,
     };
   },
   methods: {
     toggleModal() {
       this.showModal = !this.showModal;
+    },
+    toggleModal2() {
+      this.showModal2 = !this.showModal2;
     },
   },
 };
